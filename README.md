@@ -1,7 +1,7 @@
 # Algorithms-I-Coursera-Princeton-
 Data structures, sorting, and searching algorithms, with emphasis on applications and scientific performance analysis of Java implementations.
 
-This repository consists of the working folders that I used throughout the completion of this course.
+This repository consists of the java files that I worked on, alongside the zipped project folders that contain the dependencies and libraries provided by the course.
 
 My own work:
 
