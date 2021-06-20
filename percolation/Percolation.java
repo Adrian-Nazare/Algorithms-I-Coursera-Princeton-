@@ -2,9 +2,15 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
-/* System percolates after we encounter a current node whose parent has both the connected-to-top and bottom flags on,
- *  after which we set the percolates boolean flag to be true */
+/* Program that uses the Weighted Quick Union Find Data Structure in order to Simulate when percolation occurs in an N by N 2D particle system. 
+ * Percolation refers to the movement and filtering of fluids through porous materials, 
+ * and occurs when a continuous path of "conducting" particles has been found from top to bottom
+ *
+ * In my implementation, system percolates after we encounter a current node whose parent has both the
+ * connected-to-top and connected-to-bottom flags on, after which we set the percolates boolean flag to be true */
+
 public class Percolation {
+    // we use bytes for these flags in order to manipulate them easily using bitwise OR operations
     private static final byte OPEN = 0b001, CONNECTED_TO_BOTTOM = 0b010, CONNECTED_TO_TOP = 0b100,
             OPEN_CONNECTED_TO_TOP = 0b101,
             CONNECTED_TO_BOTH = 0b111;
