@@ -1,3 +1,25 @@
+/* The problem: Given a set of n distinct points in the 2D plane, find every (maximal) line segment that connects a subset of 4 or more of the points.
+
+   Used the Point data type which I implemented in order to represent a point in the plane: 
+   public class Point implements Comparable<Point> {
+    public Point(int x, int y)                         // constructs the point (x, y)
+    public   void draw()                               // draws this point
+    public   void drawTo(Point that)                   // draws the line segment from this point to that point
+    public String toString()                           // string representation
+    public               int compareTo(Point that)     // compare two points by y-coordinates, breaking ties by x-coordinates
+    public            double slopeTo(Point that)       // the slope between this point and that point
+    public Comparator<Point> slopeOrder()              // compare two points by slopes they make with this point
+   }
+   
+  Used the provide Linesegment data type, to represent line segments in the plane:
+  public class LineSegment {
+   public LineSegment(Point p, Point q)        // constructs the line segment between points p and q
+   public   void draw()                        // draws this line segment
+   public String toString()                    // string representation
+  }
+  
+  Fast solution in a nutshell: For every point: use mergesort to quickly sort points in the order of slopes made to that point, then look for 4 points with the same slope
+*/
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
