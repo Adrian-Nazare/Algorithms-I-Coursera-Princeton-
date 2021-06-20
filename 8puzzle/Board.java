@@ -1,5 +1,19 @@
-import edu.princeton.cs.algs4.In;
+/* Data type that models an n-by-n board with sliding tiles, with the following API:
+public class Board {
+    public Board(int[][] tiles)  // create a board from an n-by-n array of tiles, where tiles[row][col] = tile at (row, col)
+    public String toString() // string representation of this board
+    public int dimension() // board dimension n
+    public int hamming() // number of tiles out of place
+    public int manhattan() // sum of Manhattan distances between tiles and goal
+    public boolean isGoal() // is this board the goal board? (Goal: when all tiles are in order, with 0 at the end)
+    public boolean equals(Object y) // does this board equal y?
+    public Iterable<Board> neighbors() // all neighboring boards
+    public Board twin() // a board that is obtained by exchanging any pair of tiles
+    public static void main(String[] args) // unit testing (not graded)
+    }
+*/
 
+import edu.princeton.cs.algs4.In;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
