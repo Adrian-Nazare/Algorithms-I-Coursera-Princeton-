@@ -1,7 +1,27 @@
 /* *****************************************************************************
- *  Name:
- *  Date:
- *  Description:
+ Problem Specification: Write a data type to represent a set of points in the unit square (all points have x- and y-coordinates between 0 and 1) using 
+ a 2d-tree to support efficient range search (find all of the points contained in a query rectangle) and 
+ nearest-neighbor search (find a closest point to a query point). (the 2D version of a k-dimensional tree, where k=2)
+ 2d-trees have numerous applications, ranging from classifying astronomical objects to computer animation to speeding up neural networks to mining data to image retrieval.
+ 
+ To get started, use the following geometric primitives for points and axis-aligned rectangles in the plane:
+ * The immutable data type Point2D (part of algs4.jar) represents points in the plane. 
+ * The immutable data type RectHV (part of algs4.jar) represents axis-aligned rectangles.
+ 
+ My API in a nutshell:
+ public class KdTree {
+   public           KdTree()                               // construct an empty set of points 
+   public           boolean isEmpty()                      // is the set empty? 
+   public               int size()                         // number of points in the set 
+   public              void insert(Point2D p)              // add the point to the set (if it is not already in the set)
+   public           boolean contains(Point2D p)            // does the set contain point p? 
+   public              void draw()                         // draw all points to standard draw 
+   public Iterable<Point2D> range(RectHV rect)             // all points that are inside the rectangle (or on the boundary) 
+   public           Point2D nearest(Point2D p)             // a nearest neighbor in the set to point p; null if the set is empty 
+
+   public static void main(String[] args)                  // unit testing of the methods (optional) 
+}
+ 
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.In;
