@@ -1,3 +1,6 @@
+/* A randomized queue,  similar to a stack or queue, except that the item removed is chosen uniformly at random among items in the data structure.
+*/
+
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
@@ -11,7 +14,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     // construct an empty randomized queue
     public RandomizedQueue() {
-        // no creation? CAREFUL
+        // no code, use the default no-argument constructor here
     }
 
     // resize the array if need be
@@ -114,9 +117,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         myList.enqueue("car");
         myList.enqueue("motorcycle");
 
-        StdOut.print("Primul sample: ");
+        StdOut.print("First sample: ");
         StdOut.println(myList.sample());
-        StdOut.print("Al doilea sample: ");
+        StdOut.print("Second sample: ");
         StdOut.println(myList.sample());
 
         for (String s : myList) {
