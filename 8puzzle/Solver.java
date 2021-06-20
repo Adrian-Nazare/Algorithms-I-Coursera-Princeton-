@@ -1,3 +1,26 @@
+/* A program that solves an NxN 2d puzzle (like the one with numbers from 1 to 9, or with a picture made up of tiles that you have to bring in order).
+   I use the Board data structure that I implemented, with the following API:
+   public class Board {
+    public Board(int[][] tiles)  // create a board from an n-by-n array of tiles, where tiles[row][col] = tile at (row, col)
+    public String toString() // string representation of this board
+    public int dimension() // board dimension n
+    public int hamming() // number of tiles out of place
+    public int manhattan() // sum of Manhattan distances between tiles and goal
+    public boolean isGoal() // is this board the goal board? (Goal: when all tiles are in order, with 0 at the end)
+    public boolean equals(Object y) // does this board equal y?
+    public Iterable<Board> neighbors() // all neighboring boards
+    public Board twin() // a board that is obtained by exchanging any pair of tiles
+    public static void main(String[] args) // unit testing (not graded)
+    }
+    
+    Solution summary: we use the hamming and manhattan distances in order to keep track how close/far a board is from the goal board.
+    For this project, I used the artificial intelligence methodology known as the A* search algorithm: 
+    We define a search node of the game to be a board, the number of moves made to reach the board, and the previous search node. 
+    First, insert the initial search node (the initial board, 0 moves, and a null previous search node) into a priority queue. 
+    Then, delete from the priority queue the search node with the minimum priority, and insert onto the priority queue all neighboring search nodes 
+    (those that can be reached in one move from the dequeued search node). 
+    Repeat this procedure until the search node dequeued corresponds to the goal board.
+*/
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.MinPQ;
 import edu.princeton.cs.algs4.StdOut;
@@ -103,7 +126,6 @@ public class Solver {
         public int priority() {
             return priority;
         }
-
     }
 
     // is the initial board solvable? (see below)
